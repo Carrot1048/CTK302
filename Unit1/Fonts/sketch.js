@@ -8,6 +8,7 @@ function setup() {
   font2 = loadFont("Assets/Rubik.ttf");
 
   textAlign(CENTER);
+  angleMode(DEGREES);
 }
 
 function draw() {
@@ -15,8 +16,10 @@ function draw() {
 
   textSize(48);
   fill(94, 71, 186);
+  translate(width/2, 100);
   textFont(font1);
-  text("Hola,", width/2, 100);
+  rotate(-30);
+  text("Hola,", 0, 0);
   textFont(font2);
-  text("Me llamo Othniel.", width/2, 200);
+  text("Me llamo Othniel.", 0, 100);
 }
