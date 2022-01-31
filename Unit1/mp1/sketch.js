@@ -255,21 +255,6 @@ function draw() {
     fill(0);
     text("What most people see when they look at Orion is an ordinary teenager who is not all that impressive. He is intelligent, but not Albert Einstein. He is fit, but not athletic. He is small, but not tiny. In fact, he is pretty much like you and me... Or at least, that's what everybody thinks.", width/2, 125, 800, 200);
     pop();
-    push();
-    let t = frameCount / 60; // update time
-    stroke(100, 75);
-    fill(235, 25);
-    // create a random number of snowflakes each frame
-    for (let i = 0; i < random(5); i++) {
-      snowflakes.push(new snowflake()); // append snowflake object
-    }
-
-    // loop through snowflakes with a for..of loop
-    for (let flake of snowflakes) {
-      flake.update(t); // update snowflake position
-      flake.display(); // draw snowflake
-    }
-    pop();
   }
 }
 // Code from https://p5js.org/examples/simulate-snowflakes.html.
