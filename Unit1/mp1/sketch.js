@@ -1,5 +1,7 @@
 let city ;
+let dark ;
 let grass ;
+let darker ;
 let typeface ;
 let snowflakes = []; // array to hold snowflake objects
 
@@ -10,7 +12,9 @@ function setup() {
   textAlign(CENTER);
 
   city = loadImage("../Images/Assets/cities.jpg");
+  dark = loadImage("../Images/Assets/darkcity.jpg");
   grass = loadImage("../Images/Assets/grass.jpg");
+  darker = loadImage("../Images/Assets/darkgrass.jpg");
   typeface = loadFont("../Fonts/Assets/Courgette.ttf");
 }
 
@@ -19,8 +23,8 @@ function draw() {
   if(mouseIsPressed){
     background(119, 147, 153);
     push();
-    image(city, 0, 0, 1000, 450);
-    image(grass, 0, 430, 1000, 170);
+    image(dark, 0, 0, 1000, 450);
+    image(darker, 0, 430, 1000, 170);
     pop();
     push();
     noStroke();
