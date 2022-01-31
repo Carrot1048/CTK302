@@ -268,7 +268,7 @@ function draw() {
     pop();
   }
 }
-
+// Code from https://p5js.org/examples/simulate-snowflakes.html
 // snowflake class
 function snowflake() {
   // initialize coordinates
