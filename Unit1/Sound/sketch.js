@@ -21,7 +21,7 @@ function mouseReleased() {
 }
 
 function draw() {
-
+  background(81, 158, 156);
 }
 
 // add these to programs that use sound, at the bottom
