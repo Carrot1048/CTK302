@@ -5,7 +5,6 @@ let font1;
 function setup() {
   createCanvas(500, 500);
   // rectMode(CENTER);
-  textAlign(CENTER);
   font1 = loadFont("Assets/Rubik.ttf");
 }
 
