@@ -12,7 +12,7 @@ function draw() {
 
   push();
   translate(x, 0);
-  x+=6;
+  x+=5;
   if(x>width){
     x = -500;
   }
