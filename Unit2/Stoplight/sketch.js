@@ -8,6 +8,7 @@ function setup() {
 }
 
 function draw() {
+  
   background("white");
   fill("black");
   rect(width/2, height/2, 200, 600);
