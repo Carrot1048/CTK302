@@ -4,7 +4,7 @@ function setup() {
   createCanvas(500, 500);
   textAlign(CENTER);
   rectMode(CENTER);
-  textSize(28);
+  textSize(24);
   textFont("Georgia");
 }
 
