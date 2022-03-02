@@ -198,6 +198,26 @@ function draw() {
       text("Drink up!", width / 2, 120, 250, 120);
       //Table image
       image(table, width / 2, height - 110, width, 220);
+      //Pot
+      push();
+      fill(0, 0);
+      strokeWeight(10);
+      ellipse(width/2, height - 125, 50, 40);
+      pop();
+      fill(217, 179, 91);
+      rect(width / 2 - 10, height - 125, 50, 51);
+      push();
+      stroke(0);
+      arc(width / 2 - 10, height - 100, 50, 10, 0, 180, OPEN);
+      pop();
+      //Top of pot
+      push();
+      fill(255);
+      ellipse(width / 2 - 10, height - 150, 50, 30);
+      noStroke();
+      fill(0, 75);
+      ellipse(width / 2 - 10, height - 150, 40, 25);
+      pop();
       break;
   }
 }
