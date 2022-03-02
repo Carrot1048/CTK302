@@ -1,5 +1,5 @@
 let x = 0;
-let y = 0;
+let y = 50;
 let font1;
 
 function setup() {
@@ -19,9 +19,13 @@ function draw() {
   // }
   textFont(font1);
   textSize(24);
-  text("I love you mom!", x, 50);
+  text("I love you mom!", x, y);
   x+=5;
   if(x>width){
     x=0;
+    y+=10;
+    if(y>width-20){
+      y = 50;
+    }
   }
 }
