@@ -36,8 +36,8 @@ function draw() {
       background(127, 129, 186);
       for(var j = 0; j<100; j+=3){
         for(var i = 0; i<100; i++){
-          fill(0, random(255), 0);
-          triangle(i*10, j*10, i*15, j*5, i*20, j*10);
+          fill(0, random(255), 0, 0);
+          rect(i*5, j*20, 30, 30);
         }
       }
       text("2", 100, 100);
@@ -48,13 +48,20 @@ function draw() {
       for(var j = 0; j<100; j++){
         for(var i = 0; i<100; i++){
           fill(0, 0, random(255));
-          rect(i*10, j*10, 30, 15);
+          rect(i*50, j*60, 50, 50);
         }
       }
       text("3", 100, 100);
       break;
 
     case 4:
+      background(134, 186, 143);
+      for(var j = 0; j<100; j++){
+        for(var i = 0; i<100; i++){
+          fill(0, random(255), 0, random(100));
+          ellipse(i*25, j*30, 40, 30);
+        }
+      }
       text("4", 100, 100);
 
   }
