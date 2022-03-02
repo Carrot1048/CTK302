@@ -1,8 +1,8 @@
-let city ;
-let dark ;
-let grass ;
-let darker ;
-let typeface ;
+let city;
+let dark;
+let grass;
+let darker;
+let typeface;
 let snowflakes = []; // array to hold snowflake objects
 
 function setup() {
@@ -20,7 +20,7 @@ function setup() {
 
 function draw() {
 
-  if(mouseIsPressed){
+  if (mouseIsPressed) {
     background(119, 147, 153);
     push();
     image(dark, 0, 0, 1000, 450);
@@ -34,11 +34,11 @@ function draw() {
     push();
     fill(0);
     stroke(66, 27, 117);
-    rect(width/2, 360, 60, 80);
+    rect(width / 2, 360, 60, 80);
     rect(515, 450, 30, 100);
     rect(485, 450, 30, 100);
     fill(1, 138, 20);
-    rect(width/2, 400, 40, 10);
+    rect(width / 2, 400, 40, 10);
     pop();
     push();
     fill(66, 27, 117);
@@ -80,7 +80,7 @@ function draw() {
     pop();
     fill(217, 191, 154);
     stroke(0);
-    ellipse(width/2, 280, 70, 70);
+    ellipse(width / 2, 280, 70, 70);
     push();
     fill(158, 36, 93);
     noStroke();
@@ -107,9 +107,9 @@ function draw() {
     point(512, 280);
     pop();
     fill(235);
-    arc(width/2, 300, 20, 15, 30, 150, CHORD);
+    arc(width / 2, 300, 20, 15, 30, 150, CHORD);
     noFill();
-    arc(width/2, 295, 5, 5, -30, 120, OPEN);
+    arc(width / 2, 295, 5, 5, -30, 120, OPEN);
     pop();
     stroke(66, 27, 117);
     arc(500, 320, 30, 30, 0, 180, OPEN);
@@ -151,7 +151,7 @@ function draw() {
     textFont(typeface);
     textSize(16);
     fill(235);
-    text("He is actually harboring a secret. Behind all of those generic attributes, he actually has superhuman abilities. He can create and control chemical reactions. You know all those things you learned in Chemistry then you forgot, well he didn't. Is he the only one, or are there many other superhuman teenagers out there?", width/2, 125, 800, 200);
+    text("He is actually harboring a secret. Behind all of those generic attributes, he actually has superhuman abilities. He can create and control chemical reactions. You know all those things you learned in Chemistry then you forgot, well he didn't. Is he the only one, or are there many other superhuman teenagers out there?", width / 2, 125, 800, 200);
     pop();
     push();
     let t = frameCount / 60; // update time
@@ -168,7 +168,7 @@ function draw() {
       flake.display(); // draw snowflake
     }
     pop();
-  }else{
+  } else {
     background(119, 147, 153);
     stroke(0);
     push();
@@ -182,11 +182,11 @@ function draw() {
     pop();
     push();
     fill(1, 138, 20);
-    rect(width/2, 360, 60, 80);
+    rect(width / 2, 360, 60, 80);
     rect(515, 450, 30, 100);
     rect(485, 450, 30, 100);
     fill(99, 99, 98);
-    rect(width/2, 400, 40, 10);
+    rect(width / 2, 400, 40, 10);
     pop();
     push();
     fill(0);
@@ -227,7 +227,7 @@ function draw() {
     quad(490, 318, 510, 318, 515, 320, 485, 320);
     pop();
     fill(217, 191, 154);
-    ellipse(width/2, 280, 70, 70);
+    ellipse(width / 2, 280, 70, 70);
     push();
     fill(235);
     ellipse(490, 280, 10, 20);
@@ -241,8 +241,8 @@ function draw() {
     ellipse(510, 285, 5, 10);
     pop();
     noFill();
-    arc(width/2, 300, 20, 15, 30, 150, OPEN);
-    arc(width/2, 295, 5, 5, -30, 120, OPEN);
+    arc(width / 2, 300, 20, 15, 30, 150, OPEN);
+    arc(width / 2, 295, 5, 5, -30, 120, OPEN);
     pop();
     arc(500, 320, 30, 30, 0, 180, OPEN);
     push();
@@ -253,7 +253,7 @@ function draw() {
     textFont(typeface);
     textSize(16);
     fill(0);
-    text("What most people see when they look at Orion is an ordinary teenager who is not all that impressive. He is intelligent, but not Albert Einstein. He is fit, but not athletic. He is small, but not tiny. In fact, he is pretty much like you and me... Or at least, that's what everybody thinks.", width/2, 125, 800, 200);
+    text("What most people see when they look at Orion is an ordinary teenager who is not all that impressive. He is intelligent, but not Albert Einstein. He is fit, but not athletic. He is small, but not tiny. In fact, he is pretty much like you and me... Or at least, that's what everybody thinks.", width / 2, 125, 800, 200);
     pop();
   }
 }
@@ -283,14 +283,14 @@ function snowflake() {
     if (this.posY > height) {
       let index = snowflakes.indexOf(this);
       snowflakes.splice(index, 1);
-  }
-};
+    }
+  };
 
-this.display = function() {
-  ellipse(this.posX, this.posY, this.size);
+  this.display = function() {
+    ellipse(this.posX, this.posY, this.size);
   };
 }
 
-function mouseReleased(){
-  print(mouseX+ ', '+mouseY);
+function mouseReleased() {
+  print(mouseX + ', ' + mouseY);
 }
