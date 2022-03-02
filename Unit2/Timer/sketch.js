@@ -12,23 +12,28 @@ function draw() {
   switch (state) {
 
     case 0:
-      background("yellow") ;
-      text("0", 100, 100);
+      background("yellow");
+      fill(155);
+      textSize(45);
+      text("0", width / 2, height / 2);
 
       //timer code
       timer++;
-      if(timer > 3*60){
+      if (timer > 3 * 60) {
         timer = 0;
         state = 1;
       }
       break;
 
     case 1:
-      text("1", 100, 100);
+      background(14, 230, 212);
+      fill(255);
+      textSize(30);
+      text("1", width / 2, height / 2);
 
       //timer code
       timer++;
-      if(timer > 5*60){
+      if (timer > 5 * 60) {
         timer = 0;
         state = 2;
       }
@@ -36,11 +41,14 @@ function draw() {
       break;
 
     case 2:
-      text("2", 100, 100);
+      background(250, 187, 228);
+      fill(0);
+      textSize(60);
+      text("2", width / 2, height / 2);
 
       //timer code
       timer++;
-      if(timer > 4*60){
+      if (timer > 4 * 60) {
         timer = 0;
         state = 0;
       }
