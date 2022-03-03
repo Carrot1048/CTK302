@@ -8,7 +8,6 @@ var ease = 0.08; // how responsive do you want this? Higher numbers mean faster 
 
 function setup() {
   createCanvas(400, 400);
-
   // code for initializing mic in.
   mic = new p5.AudioIn(); // what does "new" mean?
   mic.start();
@@ -51,13 +50,13 @@ function draw() {
   text("z = " + z, 300, 20);
   switch (z) {
     case 0:
-      text("background 0", 100, 350);
+      text("Hello. Are you alone? Make some noise!", 200, 350, 200, 200);
       break;
     case 1:
-      text("background 1", 100, 350);
+      text("Now we're getting somewhere.", 100, 350);
       break;
     case 2:
-      text("background 2", 100, 350);
+      text("Don't get too loud!", 100, 350);
       break;
     default:
       text("background 2", 100, 350);
