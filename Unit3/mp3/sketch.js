@@ -23,7 +23,7 @@ function setup() {
   rain = loadImage("Assets/Rainbow.png");
   end = loadImage("Assets/GameOver.png")
 
-  createCanvas(windowWidth, windowHeight); // Makes canvas responsive
+  createCanvas(400, 600); // Makes canvas responsive
 
   // Spawn objects
   for(let i = 0; i<2; i++){
