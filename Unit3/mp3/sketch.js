@@ -9,6 +9,7 @@ let num = 0;
 let ints = [];
 let int1;
 let int2;
+let ant;
 let number;
 let play;
 let back;
@@ -17,6 +18,7 @@ let end;
 
 function setup() {
 
+  ant = loadFont("Assets/Anton.ttf");
   number = loadImage("Assets/Numbers.png");
   play = loadImage("Assets/Char2.png");
   back = loadImage("Assets/Background.png");
@@ -35,6 +37,7 @@ function setup() {
 
   frogPos = createVector(width/2, height/2);
   textAlign(CENTER,CENTER);
+  textFont(ant);
 }
 
 function draw() {
@@ -49,7 +52,11 @@ function draw() {
         }
       }
       fill('white');
-      text("Welcome to Solve the Equation!", width/2, height/2);
+      push();
+      rectMode(CENTER);
+      textSize(48);
+      text("Welcome to Solve the Equation!", width/2, height/2, width/2, height/2);
+      pop();
     break;
 
     case 1: //Game
@@ -62,8 +69,11 @@ function draw() {
       imageMode(CENTER);
       image(rain, width/2, height/2, width, height)
       pop();
+      push();
       fill('white');
+      textSize(24);
       text("Yep, that's the right answer! Keep going!", width/2, height/2+100);
+      pop();
     break;
 
     case 3: //Lose
@@ -72,8 +82,11 @@ function draw() {
       imageMode(CENTER);
       image(end, width/2, height/2, 200, 200);
       pop();
+      push();
       fill('gray');
+      textSize(64);
       text("Game Over", width/2, height/2+100);
+      pop();
     break;
   }
 }
