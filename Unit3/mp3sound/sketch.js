@@ -87,7 +87,7 @@ function draw() {
 
     case 5:
       song3.play();
-      state = 5;
+      state = 6;
     break;
 
     case 6: //Win
@@ -110,7 +110,7 @@ function draw() {
 
     case 8:
       song3.play();
-      state = 7;
+      state = 9;
     break;
 
     case 9: //Lose
@@ -144,10 +144,10 @@ function game() {
     }
     //checking for collisions, check distance between this car and frog
     if(cars[i].pos.dist(frogPos) < 50&&num==ints[i]){
-      state = 6;
+      state = 4;
     }
     if(cars[i].pos.dist(frogPos) < 50&&num!=ints[i]){
-      state = 9;
+      state = 7;
     }
   }
   fill("white");
