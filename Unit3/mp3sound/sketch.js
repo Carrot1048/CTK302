@@ -135,7 +135,7 @@ function game() {
           image(back, 100*i, 100*j);
         }
       }
-  //iterating through cars array
+  //iterating through numbers array
   for(let i = 0; i<numbers.length; i++){
     numbers[i].display();
     numbers[i].move();
@@ -151,7 +151,7 @@ function game() {
     }
   }
   fill("white");
-  //frog
+  //robot
   push();
   imageMode(CENTER);
   image(play,robPos.x, robPos.y, 100, 100);
