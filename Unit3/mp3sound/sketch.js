@@ -136,7 +136,7 @@ function game() {
         }
       }
   //iterating through cars array
-  for(let i = 0; i<cars.length; i++){
+  for(let i = 0; i<numbers.length; i++){
     numbers[i].display();
     numbers[i].move();
     for(let j = 0; j<ints.length; j++){
