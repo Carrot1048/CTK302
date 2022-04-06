@@ -38,7 +38,7 @@ function setup() {
 
  // let myIDString = "appid=xxxxx"; // put your ID instead of xxxxx
 
-  let myIDString = "appid=2ab3fd961cc8c4aacb1786ddb79e8da5" ;
+  let myIDString = "appid=efdcc10344b502a319d6d50a3804650c";
 
   let myTotalString = myCityString + myIDString;
 
@@ -101,7 +101,7 @@ function draw() {
       image(tempy, x, 300, 100, 100);
 
       // move Tempy's x position
-      x += temperature / 10;
+      x += windspeed / 2;
 
       if (x > width) x = 0;//loop the cloud across screen
 
