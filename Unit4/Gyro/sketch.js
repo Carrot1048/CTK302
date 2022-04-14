@@ -78,21 +78,21 @@ function draw() {
 
   // Text that makes CTK type in the background
   push();
-  translate(width/2, height/2);
   rotate(radians(alpha));
+  translate(width/2, height/2);
   fill('white');
   noStroke();
   textAlign(CENTER);
   if(alpha>0&&alpha<=60){
-    textSize(300);
+    textSize(250);
     text("Have", 0, 0);
   }
   if(alpha>60&&alpha<=120){
-    textSize(250);
+    textSize(200);
     text("a", 0, 0);
   }
   if(alpha>120&&alpha<=180){
-    textSize(200);
+    textSize(150);
     text("nice", 0, 0);
   }
   if(alpha>180&&alpha<=240){
@@ -104,7 +104,7 @@ function draw() {
     text("stupendous", 0, 0);
   }
   if(alpha>300&&alpha<=360){
-    textSize(300);
+    textSize(250);
     text("day!", 0, 0);
   }
   pop();
