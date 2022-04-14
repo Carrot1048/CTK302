@@ -6,7 +6,7 @@ let bunnyImage;
 let xPosition = 0;
 let yPosition = 0;
 let x = 0, y = 0, z = 0 ; // accelerometer data
-
+let pix;
 
 function setup() {
 
@@ -15,14 +15,16 @@ function setup() {
 
 
   bunnyImage = loadImage("Assets/BigO-Camo.jpg");
+  pix = loadFont("Assets/Pixel.ttf")
   imageMode(CENTER);
   rectMode(CENTER);
+  textFont(pix);
 
 }
 
 function draw() {
 
-  background('#c6f5ff'); // light blue
+  background(204, 167, 193); // light pink
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
