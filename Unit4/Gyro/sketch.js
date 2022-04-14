@@ -78,11 +78,11 @@ function draw() {
 
   // Text that makes CTK type in the background
   push();
+  textAlign(CENTER);
   rotate(radians(alpha));
   translate(width/2, height/2);
   fill('white');
   noStroke();
-  textAlign(CENTER);
   if(alpha>0&&alpha<=60){
     textSize(250);
     text("Have", 0, 0);
