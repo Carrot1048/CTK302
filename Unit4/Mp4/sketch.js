@@ -20,7 +20,7 @@ function preload() {
 function setup() {
   // createCanvas(windowWidth, windowHeight);
   createCanvas(displayWidth, displayHeight);
-  textFont(font1, 36);
+  textFont(font1, 24);
   intervalCurrentPosition(positionPing, 5000); // this is what calls positionPing function
   // Create a tile map with the options declared
   myMap = mappa.tileMap(options);
