@@ -87,6 +87,9 @@ function draw(){
         clear();
         const itoshima = myMap.latLngToPixel(33.511777, 130.146019);
         // Using that position, draw an ellipse
+        if(myColor == 'red'){
+          tint('red');
+        }
         image(flower, itoshima.x, itoshima.y, 15, 15);
         break;
     }
