@@ -45,6 +45,7 @@ let flower;
 let state = 0;
 let name;
 let myColor;
+var locationData;
 let myMap;
 let canvas;
 const mappa = new Mappa('Leaflet');
@@ -57,9 +58,16 @@ const options = {
   style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
 }
 
+function preload(){
+  locationData = getCurrentPosition();
+  font1 = loadFont("Assets/Anton.ttf");
+}
+
 function setup(){
   canvas = createCanvas(800,400);
+  intervalCurrentPosition(positionPing, 5000); // this is what calls positionPing function
   // background(100); let's uncomment this, we don't need it for now
+  textFont(font1, 24);
   flower = loadImage("Assets/Spring.png");
   // Create a tile map with the options declared
   myMap = mappa.tileMap(options);
@@ -82,4 +90,12 @@ function draw(){
         image(flower, itoshima.x, itoshima.y, 15, 15);
         break;
     }
+}
+
+function positionPing(position) {
+  // textSize(36);
+  background("#2452d1");
+  fill("white");
+  text("lat: " + position.latitude, 10, 40);
+  text("long: " + position.longitude, 10, 90);
 }
