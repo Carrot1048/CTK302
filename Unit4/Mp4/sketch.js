@@ -36,17 +36,15 @@ function draw(){
       case 0:
         background(111, 144, 148);
         name = prompt("What is your name?");
-        myColor = prompt("What is your favorite color?")
+        myColor = prompt("What is your favorite color?");
         state++;
         break;
 
       case 1:
         clear();
-        const itoshima = myMap.latLngToPixel(33.511777, 130.146019);
-        // Using that position, draw an ellipse
-        if(myColor == 'red'){
-          tint('red');
-        }
+        const itoshima = myMap.latLngToPixel(locationData.latitude, locationData.longitude);
+        //color of the flower using their favorite color
+        tint(myColor);
         image(flower, itoshima.x, itoshima.y, 15, 15);
         break;
     }

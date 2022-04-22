@@ -67,22 +67,7 @@ class Bubble {
   display() {
     // stroke("white");
     //Filling the shapes based on the person's favorite color
-    fill('black');
-    if(this.color=="red"||this.color=="Red"){
-      fill('red');
-    }
-    if(this.color=="blue"||this.color=="Blue"){
-      fill('blue');
-    }
-    if(this.color=="yellow"||this.color=="Yellow"){
-      fill(158, 154, 43);
-    }
-    if(this.color=="purple"||this.color=="Purple"){
-      fill(67, 18, 120);
-    }
-    if(this.color=="green"||this.color=="Green"){
-      fill(35, 120, 40);
-    }
+    fill(this.color);
     //If siblings is even, then shape is square, if odd, then shape is circle
     if(this.siblings%2==0){
       rect(this.pos.x, this.pos.y+20, 120, 120);
