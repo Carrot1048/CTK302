@@ -107,6 +107,7 @@ function gotData(data) {
   console.log(data); // Print the data in the console
 }
 
+//Button press
 function beginEcho() {
   locations = [];
   locations.push(peoria);
