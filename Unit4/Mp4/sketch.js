@@ -109,6 +109,7 @@ function gotData(data) {
 
 //Button press
 function beginEcho() {
+  //Reset location array
   locations = [];
   locations.push(peoria);
   locations.push(morton);
