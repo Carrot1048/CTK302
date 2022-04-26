@@ -147,14 +147,14 @@ function beginEcho() {
       } else if (tempDistance == null) {
         tempDistance = calcGeoDistance(locations[i].pos.x, locations[i].pos.y, locations[j].pos.x, locations[j].pos.y, 'mi');
         closestNeighbor = locations[j];
-        locations[j].neighbor = locations[i];
+        locations[i].neighbor = locations[j];
       } else if (Math.abs(calcGeoDistance(locations[i].pos.x, locations[i].pos.y, locations[j].pos.x, locations[j].pos.y, 'mi')) < Math.abs(tempDistance)) {
         tempDistance = calcGeoDistance(locations[i].pos.x, locations[i].pos.y, locations[j].pos.x, locations[j].pos.y, 'mi');
         closestNeighbor = locations[j];
-        locations[j].neighbor = locations[i];
+        locations[i].neighbor = locations[j];
       }
     }
-    locations[i].neighbor = closestNeighbor;
+    //locations[i].neighbor = closestNeighbor;
   }
 }
 class EchoMapPin {
