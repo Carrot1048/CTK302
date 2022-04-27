@@ -157,6 +157,7 @@ function beginEcho() {
     //locations[i].neighbor = closestNeighbor;
   }
 }
+
 class EchoMapPin {
   constructor(latLong, neighbor) {
     this.pos = latLong;
