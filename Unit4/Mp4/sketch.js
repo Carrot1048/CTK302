@@ -15,7 +15,9 @@ let bloomington;
 let washington;
 let normal;
 let me;
-let place = [];
+let r = 0;
+let s;
+let timer = 180;
 const mappa = new Mappa('Leaflet');
 
 // Lets put all our map options in a single object
@@ -87,20 +89,6 @@ function draw() {
     me = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude), me.neighbor);
   }
 
-  // washington = new EchoMapPin(myMap.latLngToPixel(40.7036, -89.4073));
-  // peoria = new EchoMapPin(myMap.latLngToPixel(40.6936, -89.5890));
-  // morton = new EchoMapPin(myMap.latLngToPixel(40.6128, -89.4593));
-  // bloomington = new EchoMapPin(myMap.latLngToPixel(40.4842, -88.9937));
-  // pekin = new EchoMapPin(myMap.latLngToPixel(40.5675, -89.6407));
-  // normal = new EchoMapPin(myMap.latLngToPixel(40.5142, -88.9906));
-  // me = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude));
-
-  if (locations != null){
-    for (i = 0; i < locations.length; i++){
-      place.push(locations[i]);
-    }
-  }
-  let places = random(place);
   tint(myColor);
   noFill();
   beginShape();
@@ -111,18 +99,14 @@ function draw() {
   pekin.display();
   normal.display();
   me.display();
-  // place[random(place.length)].display();
-  // place[random(place.length)].display();
-  // place[random(place.length)].display();
-  // place[random(place.length)].display();
-  // place[random(place.length)].display();
-  // place[random(place.length)].display();
-  // place[random(place.length)].display();
+  if (locations != null){
+    for (let i = 0; i < locations.length; i+=0.0001){
+      r = int(random(0, locations.length))
+      locations[r].display();
+      locations.splice(r, 1);
+    }
+  }
   endShape();
-
-
-
-
 }
 
 // function positionPing(position) {
