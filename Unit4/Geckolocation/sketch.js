@@ -89,8 +89,8 @@ function draw() {
   } else {
     myPin = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude), myPin.neighbor);
   }
-  // noFill();
-  // beginShape();
+  noFill();
+  beginShape();
   peoria.display();
   morton.display();
   bloomington.display();
@@ -100,7 +100,7 @@ function draw() {
   if (myPin != null) {
     myPin.display();
   }
-  // endShape();
+  endShape();
 }
 
 function gotData(data) {
@@ -161,8 +161,8 @@ class EchoMapPin {
   }
   display() {
     if (this.neighbor != null) {
-      line(this.pos.x,this.pos.y,this.neighbor.pos.x,this.neighbor.pos.y);
-      // vertex(this.pos.x, this.pos.y);
+      // line(this.pos.x,this.pos.y,this.neighbor.pos.x,this.neighbor.pos.y);
+      vertex(this.pos.x, this.pos.y);
     }
     //coloring image with their color
     push();
