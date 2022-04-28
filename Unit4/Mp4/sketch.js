@@ -15,6 +15,7 @@ let bloomington;
 let washington;
 let normal;
 let me;
+let place = [];
 const mappa = new Mappa('Leaflet');
 
 // Lets put all our map options in a single object
@@ -31,7 +32,7 @@ function preload() {
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
-  intervalCurrentPosition(positionPing, 5000); // this is what calls positionPing function
+  // intervalCurrentPosition(positionPing, 5000); // this is what calls positionPing function
   // background(100); let's uncomment this, we don't need it for now
   font1 = loadFont("Assets/Anton.ttf");
   textFont(font1, 24);
@@ -40,11 +41,12 @@ function setup() {
   myMap = mappa.tileMap(options);
   myMap.overlay(canvas);
   imageMode(CENTER);
+  textAlign(CENTER);
 }
 
 function draw() {
   clear();
-  if (name == null){
+  if (name == null) {
     name = prompt("What is your name?");
     myColor = prompt("What is your favorite color?");
   }
@@ -84,7 +86,24 @@ function draw() {
   } else {
     me = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude), me.neighbor);
   }
+
+  // washington = new EchoMapPin(myMap.latLngToPixel(40.7036, -89.4073));
+  // peoria = new EchoMapPin(myMap.latLngToPixel(40.6936, -89.5890));
+  // morton = new EchoMapPin(myMap.latLngToPixel(40.6128, -89.4593));
+  // bloomington = new EchoMapPin(myMap.latLngToPixel(40.4842, -88.9937));
+  // pekin = new EchoMapPin(myMap.latLngToPixel(40.5675, -89.6407));
+  // normal = new EchoMapPin(myMap.latLngToPixel(40.5142, -88.9906));
+  // me = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude));
+
+  if (locations != null){
+    for (i = 0; i < locations.length; i++){
+      place.push(locations[i]);
+    }
+  }
+  let places = random(place);
   tint(myColor);
+  noFill();
+  beginShape();
   peoria.display();
   morton.display();
   bloomington.display();
@@ -92,16 +111,27 @@ function draw() {
   pekin.display();
   normal.display();
   me.display();
+  // place[random(place.length)].display();
+  // place[random(place.length)].display();
+  // place[random(place.length)].display();
+  // place[random(place.length)].display();
+  // place[random(place.length)].display();
+  // place[random(place.length)].display();
+  // place[random(place.length)].display();
+  endShape();
+
+
+
 
 }
 
-function positionPing(position) {
-  // textSize(36);
-  background("#2452d1");
-  fill("white");
-  text("lat: " + position.latitude, 10, 40);
-  text("long: " + position.longitude, 10, 90);
-}
+// function positionPing(position) {
+//   // textSize(36);
+//   background("#2452d1");
+//   fill("white");
+//   text("lat: " + position.latitude, 10, 40);
+//   text("long: " + position.longitude, 10, 90);
+// }
 
 function gotData(data) {
   console.log(data); // Print the data in the console
@@ -169,9 +199,11 @@ class EchoMapPin {
   }
   display() {
     if (this.neighbor != null) {
-      line(this.pos.x, this.pos.y, this.neighbor.pos.x, this.neighbor.pos.y);
+      // line(this.pos.x, this.pos.y, this.neighbor.pos.x, this.neighbor.pos.y);
+      vertex(this.pos.x, this.pos.y);
     }
+
     //color of the flower using their favorite color
-    image(flower, this.pos.x, this.pos.y, 15, 15);
+    image(flower, this.pos.x, this.pos.y, 25, 25);
   }
 }
