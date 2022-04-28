@@ -164,6 +164,7 @@ class EchoMapPin {
       line(this.pos.x,this.pos.y,this.neighbor.pos.x,this.neighbor.pos.y);
       // vertex(this.pos.x, this.pos.y);
     }
+    //coloring image with their color
     push();
     tint(myColor);
     image(flower, this.pos.x, this.pos.y, 25, 25);
