@@ -1,5 +1,6 @@
 let name;
 let myColor;
+let myColor2;
 var num;
 var distance;
 var font1, font2;
@@ -37,7 +38,7 @@ function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   num = 0;
   flower = loadImage("Assets/Spring.png");
-  textFont(font1, 24);
+  textFont(font1, 12);
   //setInterval(updateLocations,30000);
   // intervalCurrentPosition(positionPing, 5000); // this is what calls positionPing function
   myMap = mappa.tileMap(options);
@@ -53,41 +54,42 @@ function draw() {
   if (name == null) {
     name = prompt("What is your name?");
     myColor = prompt("What is your favorite color?");
+    myColor2 = prompt("What is your next favorite color?")
   }
   if (washington == null) {
-    washington = new EchoMapPin(myMap.latLngToPixel(40.7036, -89.4073), null);
+    washington = new EchoMapPin(myMap.latLngToPixel(40.7036, -89.4073), null, '');
   } else {
-    washington = new EchoMapPin(myMap.latLngToPixel(40.7036, -89.4073), washington.neighbor);
+    washington = new EchoMapPin(myMap.latLngToPixel(40.7036, -89.4073), washington.neighbor, '');
   }
   if (peoria == null) {
-    peoria = new EchoMapPin(myMap.latLngToPixel(40.6936, -89.5890), null);
+    peoria = new EchoMapPin(myMap.latLngToPixel(40.6936, -89.5890), null, '');
   } else {
-    peoria = new EchoMapPin(myMap.latLngToPixel(40.6936, -89.5890), peoria.neighbor);
+    peoria = new EchoMapPin(myMap.latLngToPixel(40.6936, -89.5890), peoria.neighbor, '');
   }
   if (morton == null) {
-    morton = new EchoMapPin(myMap.latLngToPixel(40.6128, -89.4593), null);
+    morton = new EchoMapPin(myMap.latLngToPixel(40.6128, -89.4593), null, '');
   } else {
-    morton = new EchoMapPin(myMap.latLngToPixel(40.6128, -89.4593), morton.neighbor);
+    morton = new EchoMapPin(myMap.latLngToPixel(40.6128, -89.4593), morton.neighbor, '');
   }
   if (bloomington == null) {
-    bloomington = new EchoMapPin(myMap.latLngToPixel(40.4842, -88.9937), null);
+    bloomington = new EchoMapPin(myMap.latLngToPixel(40.4842, -88.9937), null, '');
   } else {
-    bloomington = new EchoMapPin(myMap.latLngToPixel(40.4842, -88.9937), bloomington.neighbor);
+    bloomington = new EchoMapPin(myMap.latLngToPixel(40.4842, -88.9937), bloomington.neighbor, '');
   }
   if (pekin == null) {
-    pekin = new EchoMapPin(myMap.latLngToPixel(40.5675, -89.6407), null);
+    pekin = new EchoMapPin(myMap.latLngToPixel(40.5675, -89.6407), null, '');
   } else {
-    pekin = new EchoMapPin(myMap.latLngToPixel(40.5675, -89.6407), pekin.neighbor);
+    pekin = new EchoMapPin(myMap.latLngToPixel(40.5675, -89.6407), pekin.neighbor, '');
   }
   if (normal == null) {
-    normal = new EchoMapPin(myMap.latLngToPixel(40.5142, -88.9906), null);
+    normal = new EchoMapPin(myMap.latLngToPixel(40.5142, -88.9906), null, '');
   } else {
-    normal = new EchoMapPin(myMap.latLngToPixel(40.5142, -88.9906), normal.neighbor);
+    normal = new EchoMapPin(myMap.latLngToPixel(40.5142, -88.9906), normal.neighbor, '');
   }
   if (myPin == null) {
-    myPin = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude), null);
+    myPin = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude), null, name);
   } else {
-    myPin = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude), myPin.neighbor);
+    myPin = new EchoMapPin(myMap.latLngToPixel(locationData.latitude, locationData.longitude), myPin.neighbor, name);
   }
   noFill();
   beginShape();
@@ -147,13 +149,14 @@ function beginEcho() {
   }
 }
 class EchoMapPin {
-  constructor(latLong, neighbor) {
+  constructor(latLong, neighbor, label) {
     this.pos = latLong;
     if(this.connected = null)
     {
       this.connected = false;
     }
     this.neighbor = neighbor;
+    this.label = label;
     this.neighborIndex;
     this.r = random(255);
     this.g = random(255);
@@ -168,6 +171,9 @@ class EchoMapPin {
     push();
     tint(myColor);
     image(flower, this.pos.x, this.pos.y, 25, 25);
+    stroke('black');
+    fill(myColor2);
+    text(this.label, this.pos.x, this.pos.y);
     pop();
   }
 }
