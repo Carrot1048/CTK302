@@ -4,7 +4,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   rectMode(CENTER);
   imageMode(CENTER);
-  camo = loadImage("Camo.png");
+  camo = loadImage("Assets/Camo.png");
 }
 
 function draw() {
